@@ -1,6 +1,6 @@
 import os
 from tkinter import Label, Frame, filedialog, messagebox, Text
-from tkinterdnd2 import TkinterDnD, DND_FILES  # Solo importar lo necesario
+from tkinterdnd2 import TkinterDnD, DND_FILES
 from PIL import Image
 from pdf2image import convert_from_path
 import pytesseract
