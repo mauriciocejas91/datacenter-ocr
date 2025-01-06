@@ -5,7 +5,6 @@ from PIL import Image
 from pdf2image import convert_from_path
 import pytesseract
 import ttkbootstrap as ttk
-import psutil
 
 # Obtener la ruta del directorio actual y concatenar 'output'
 base_directory = os.path.dirname(os.path.abspath(__file__))
