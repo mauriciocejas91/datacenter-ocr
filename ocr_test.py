@@ -14,6 +14,9 @@ output_folder = os.path.join(base_directory, "output")
 if not os.path.exists(output_folder):
     os.makedirs(output_folder)
 
+# Definir la carpeta de salida
+output_folder = os.path.join(base_directory, "output")
+
 # Función para convertir PDF a imágenes y extraer texto
 def extract_text_from_pdf(pdf_path):
     file_name = os.path.splitext(os.path.basename(pdf_path))[0]
