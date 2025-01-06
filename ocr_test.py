@@ -5,6 +5,7 @@ from PIL import Image
 from pdf2image import convert_from_path
 import pytesseract
 import ttkbootstrap as ttk
+import psutil
 
 # Obtener la ruta del directorio actual y concatenar 'output'
 base_directory = os.path.dirname(os.path.abspath(__file__))
@@ -93,6 +94,10 @@ def load_files_png():
     if file_paths:
         for png_path in file_paths:
             extract_text_from_png(png_path)
+
+############
+# INTERFAZ #
+############
 
 # Configuración de la interfaz gráfica
 root = TkinterDnD.Tk()  # Usamos TkinterDnD.Tk directamente
