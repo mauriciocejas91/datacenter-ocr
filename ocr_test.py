@@ -1,5 +1,5 @@
 import os
-from tkinter import Tk, Label, Frame, filedialog, messagebox
+from tkinter import Label, Frame, filedialog, messagebox
 from tkinterdnd2 import TkinterDnD
 from PIL import Image
 from pdf2image import convert_from_path
@@ -51,6 +51,10 @@ def load_files_png():
             extract_text_from_png(png_path)
         messagebox.showinfo("Proceso completado", "Todos los archivos PNG se han procesado correctamente.")
 
+# Función para abrir la carpeta de salida
+def open_output_folder():
+    os.startfile(output_folder)
+
 # Configuración de la interfaz gráfica
 root = ttk.Window(themename="superhero")
 root.title("Extractor de Texto OCR")
@@ -65,12 +69,16 @@ frame = Frame(root, bg="#343a40")
 frame.pack(pady=10)
 
 # Botón para cargar archivos PDF
-pdf_button = ttk.Button(frame, text="Cargar PDFs", bootstyle="success-outline", command=load_files_pdf)
+pdf_button = ttk.Button(frame, text="Cargar PDFs", bootstyle="success", command=load_files_pdf)
 pdf_button.grid(row=0, column=0, padx=10, pady=10)
 
 # Botón para cargar archivos PNG
-png_button = ttk.Button(frame, text="Cargar PNGs", bootstyle="info-outline", command=load_files_png)
+png_button = ttk.Button(frame, text="Cargar PNGs", bootstyle="info", command=load_files_png)
 png_button.grid(row=0, column=1, padx=10, pady=10)
+
+# Botón para abrir la carpeta de salida
+output_button = ttk.Button(frame, text="Abrir carpeta de salida", bootstyle="light", command=open_output_folder)
+output_button.grid(row=0, column=2, padx=10, pady=10)
 
 # Iniciar la interfaz gráfica
 root.mainloop()
