@@ -100,8 +100,23 @@ def load_files_png():
 
 # Configuración de la interfaz gráfica
 root = TkinterDnD.Tk()  # Usamos TkinterDnD.Tk directamente
-root.title("Extractor de Texto OCR")
-root.geometry("500x350")
+root.title("DatacenterTDF | Extractor de Texto OCR")
+root.geometry("500x350")  # Definir tamaño de ventana
+
+# Obtener las dimensiones de la pantalla
+screen_width = root.winfo_screenwidth()
+screen_height = root.winfo_screenheight()
+
+# Establecer el tamaño de la ventana
+window_width = 500
+window_height = 350
+
+# Calcular la posición de la ventana para que se abra centrada
+position_top = int((screen_height / 2) - (window_height / 2))
+position_right = int((screen_width / 2) - (window_width / 2))
+
+# Establecer la geometría con la posición centrada
+root.geometry(f"{window_width}x{window_height}+{position_right}+{position_top}")
 
 # Configuración de estilo y tema
 style = ttk.Style()  # Creamos el objeto style
