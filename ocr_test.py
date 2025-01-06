@@ -119,8 +119,8 @@ position_right = int((screen_width / 2) - (window_width / 2))
 root.geometry(f"{window_width}x{window_height}+{position_right}+{position_top}")
 
 # Configuración de estilo y tema
-style = ttk.Style()  # Creamos el objeto style
-style.theme_use("superhero")  # Usamos el tema superhero
+style = ttk.Style()
+style.theme_use("superhero")  # Usamos el tema "superhero"
 
 # Etiqueta de encabezado
 label = Label(root, text="Cargar archivos PDF o PNG para extraer texto", font=("Segoe UI", 14), bg="#343a40", fg="white")
